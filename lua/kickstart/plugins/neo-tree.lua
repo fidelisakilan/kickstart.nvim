@@ -7,14 +7,26 @@ vim.pack.add {
   'https://github.com/MunifTanjim/nui.nvim',
 }
 
-vim.keymap.set('n', '\\', '<Cmd>Neotree reveal<CR>', { desc = 'NeoTree reveal', silent = true })
+vim.keymap.set('n', '<leader>e', '<Cmd>Neotree toggle<CR>')
+vim.keymap.set('n', '<leader>ge', '<Cmd>Neotree git_status<CR>')
 
 require('neo-tree').setup {
   filesystem = {
-    window = {
-      mappings = {
-        ['\\'] = 'close_window',
-      },
+    bind_to_cwd = false,
+    follow_current_file = { enabled = true },
+    use_libuv_file_watcher = true,
+    hijack_netrw_behavior = 'open_current',
+    -- filtered_items = {
+    --   visible = true,
+    -- },
+  },
+  window = {
+    position = 'float',
+    mappings = {
+      ['l'] = 'open',
+      ['h'] = 'close_node',
+      ['<space>'] = 'none',
+      ['P'] = { 'toggle_preview', config = { use_float = false } },
     },
   },
 }
