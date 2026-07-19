@@ -8,20 +8,21 @@ vim.pack.add {
 }
 
 vim.keymap.set('n', '<leader>e', '<Cmd>Neotree toggle<CR>')
-vim.keymap.set('n', '<leader>ge', '<Cmd>Neotree git_status<CR>')
+-- vim.keymap.set('n', '<leader>ge', '<Cmd>Neotree git_status<CR>')
 
 require('neo-tree').setup {
   filesystem = {
     bind_to_cwd = false,
     follow_current_file = { enabled = true },
     use_libuv_file_watcher = true,
-    hijack_netrw_behavior = 'open_current',
+    hijack_netrw_behavior = 'open_default',
+    -- hijack_netrw_behavior = 'open_current',
     -- filtered_items = {
     --   visible = true,
     -- },
   },
   window = {
-    position = 'float',
+    -- position = 'float',
     mappings = {
       ['l'] = 'open',
       ['h'] = 'close_node',
