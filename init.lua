@@ -414,12 +414,14 @@ do
   -- require('tokyonight').setup {}
   -- vim.cmd.colorscheme 'tokyonight-night'
 
-  vim.pack.add { gh 'catppuccin/nvim' }
-  require('catppuccin').setup {
-    flavour = 'auto',
-    background = { light = 'latte', dark = 'mocha' },
-  }
-  vim.cmd.colorscheme 'catppuccin-nvim'
+  if not require('custom.omarchy_theme').apply() then
+    vim.pack.add { gh 'catppuccin/nvim' }
+    require('catppuccin').setup {
+      flavour = 'auto',
+      background = { light = 'latte', dark = 'mocha' },
+    }
+    vim.cmd.colorscheme 'catppuccin-nvim'
+  end
 
   -- vim.pack.add { gh 'ellisonleao/gruvbox.nvim' }
   -- require("gruvbox").setup({})
