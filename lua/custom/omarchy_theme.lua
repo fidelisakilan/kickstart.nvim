@@ -1,17 +1,6 @@
--- Applies the Omarchy theme's own official colorscheme plugin, the same
--- way omarchy's default LazyVim distro does it: each theme under
--- ~/.config/omarchy/current/theme/neovim.lua is a plugin spec naming the
--- real upstream colorscheme (catppuccin/nvim, gruvbox.nvim, etc). LazyVim
--- consumes that spec by symlinking it into lua/plugins/ and auto-importing
--- it; vim.pack has no such import pipeline, so this reads the same table
--- with dofile() and drives vim.pack.add + :colorscheme from it directly.
---
--- On machines without Omarchy (e.g. macOS) the file doesn't exist and
--- M.apply() returns false so the caller can fall back to a static scheme.
-
 local M = {}
 
-local SPEC_PATH = vim.fn.expand '~/.config/omarchy/current/theme/neovim.lua'
+local SPEC_PATH = vim.fn.expand '~/.local/state/omarchy/current/theme/neovim.lua'
 
 local function module_name(entry)
   if entry.name then
