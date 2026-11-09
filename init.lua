@@ -110,9 +110,7 @@ do
 
   -- Make line numbers default
   vim.o.number = true
-  -- You can also add relative line numbers, to help with jumping.
-  --  Experiment for yourself to see if you like it!
-  -- vim.o.relativenumber = true
+  vim.o.relativenumber = true
 
   -- Enable mouse mode, can be useful for resizing splits for example!
   vim.o.mouse = 'a'
@@ -414,14 +412,12 @@ do
   -- require('tokyonight').setup {}
   -- vim.cmd.colorscheme 'tokyonight-night'
 
-  if not require('custom.omarchy_theme').apply() then
-    vim.pack.add { gh 'catppuccin/nvim' }
-    require('catppuccin').setup {
-      flavour = 'auto',
-      background = { light = 'latte', dark = 'mocha' },
-    }
-    vim.cmd.colorscheme 'catppuccin-nvim'
-  end
+vim.pack.add { gh 'catppuccin/nvim' }
+require('catppuccin').setup {
+  flavour = 'auto',
+  background = { light = 'latte', dark = 'mocha' },
+}
+vim.cmd.colorscheme 'catppuccin-nvim'
 
   -- vim.pack.add { gh 'ellisonleao/gruvbox.nvim' }
   -- require("gruvbox").setup({})
