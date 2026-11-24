@@ -412,12 +412,12 @@ do
   -- require('tokyonight').setup {}
   -- vim.cmd.colorscheme 'tokyonight-night'
 
-vim.pack.add { gh 'catppuccin/nvim' }
-require('catppuccin').setup {
-  flavour = 'auto',
-  background = { light = 'latte', dark = 'mocha' },
-}
-vim.cmd.colorscheme 'catppuccin-nvim'
+  vim.pack.add { { src = gh 'rose-pine/neovim', name = 'rose-pine' } }
+  require('rose-pine').setup {
+    variant = 'auto', -- follows vim.o.background: main (dark) / dawn (light)
+    dark_variant = 'main',
+  }
+  vim.cmd.colorscheme 'rose-pine'
 
   -- vim.pack.add { gh 'ellisonleao/gruvbox.nvim' }
   -- require("gruvbox").setup({})
