@@ -419,10 +419,6 @@ do
   }
   vim.cmd.colorscheme 'rose-pine'
 
-  -- vim.pack.add { gh 'ellisonleao/gruvbox.nvim' }
-  -- require("gruvbox").setup({})
-  -- vim.cmd.colorscheme 'gruvbox'
-
   -- Highlight todo, notes, etc in comments
   vim.pack.add { gh 'folke/todo-comments.nvim' }
   require('todo-comments').setup { signs = false }
